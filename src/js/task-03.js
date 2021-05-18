@@ -11,8 +11,9 @@ const makeTransaction = transaction => {
 
       if (canProcess) {
         resolve([transaction.id, delay]);
+      } else {
+        reject(transaction.id);
       }
-      reject(transaction.id);
     }, delay);
   });
 };
